@@ -1,0 +1,478 @@
+/* ==========================================================================
+   SECTIONS — Homepage Sections (News, Parish, Schedules, Pastorals & CTA)
+   Paróquia Imaculada Conceição
+   ========================================================================== */
+
+/* ── Common Section Header ──────────────────────────────────────────────── */
+.section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: var(--space-sm) 0 0;
+}
+
+/* ── Section: Notícias (News) ───────────────────────────────────────────── */
+.section-news {
+  background-color: var(--color-bg-alt);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.news-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.news-card__image-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--color-primary-dark);
+}
+
+.news-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-card__image {
+  transform: scale(1.05);
+}
+
+.news-card__category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+}
+
+.news-card__content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xs);
+}
+
+.news-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.news-card__excerpt {
+  color: var(--color-text);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.news-card__link {
+  align-self: flex-start;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.news-card__link:hover {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+/* ── Section: Nossa Paróquia (Institutional) ────────────────────────────── */
+.section-parish {
+  background-color: #FFFFFF;
+}
+
+.parish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.parish-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.parish-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-normal);
+}
+
+.parish-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.parish-card:hover::before {
+  width: 60px;
+}
+
+.parish-card__icon-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+  transition: all var(--transition-normal);
+}
+
+.parish-card:hover .parish-card__icon-box {
+  background: var(--color-primary);
+  border-color: var(--color-accent);
+  transform: scale(1.08);
+}
+
+.parish-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.parish-card__text {
+  color: var(--color-text-light);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.parish-card__link {
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
+}
+
+.parish-card__link:hover {
+  color: var(--color-primary);
+}
+
+/* ── Section: Horários (Schedules) ──────────────────────────────────────── */
+.section-schedules {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-schedules::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.section-schedules .section-title {
+  color: #FFFFFF;
+}
+
+.section-schedules .section-tag {
+  color: var(--color-accent-light);
+}
+
+.section-schedules .section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.schedules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.schedule-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.schedule-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.schedule-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.schedule-card__icon {
+  font-size: 1.8rem;
+}
+
+.schedule-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-accent-light);
+  font-weight: 600;
+  margin: 0;
+}
+
+.schedule-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.schedule-card__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.schedule-card__label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.schedule-card__time {
+  color: var(--color-accent-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ── Section: Pastorais (Ministries) ────────────────────────────────────── */
+.section-pastorals {
+  background-color: var(--color-bg-alt);
+}
+
+.pastorals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.pastoral-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pastoral-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.pastoral-card__icon {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.pastoral-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.pastoral-card__text {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Section: CTA Dízimo / Chamada para Ação ────────────────────────────── */
+.section-cta {
+  background-color: #FFFFFF;
+  padding: var(--space-2xl) 0;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.cta-box__content {
+  max-width: 650px;
+}
+
+.cta-box__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: var(--space-xs);
+}
+
+.cta-box__title span {
+  color: var(--color-accent-light);
+}
+
+.cta-box__text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-box__button {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box__button:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  color: var(--color-primary-dark);
+}

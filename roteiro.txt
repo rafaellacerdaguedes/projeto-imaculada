@@ -1,0 +1,227 @@
+# Desenvolvimento de um Portal Institucional Paroquial
+
+Atue como um desenvolvedor Front-end Sênior e UI/UX Designer especializado na criação de portais institucionais, sites religiosos e plataformas de gerenciamento de conteúdo.
+
+## 1. Objetivo do projeto
+
+Desenvolva um site institucional para uma paróquia católica "Nossa Senhora Imaculada Conceição", utilizando como referência estrutural e visual o seguinte endereço:
+
+[https://pnse.com.br/](https://pnse.com.br/)
+
+Analise a organização das páginas, a hierarquia das informações, a navegação, a disposição dos elementos, os componentes visuais e a experiência do usuário.
+
+O objetivo é desenvolver um portal com características semelhantes, mantendo uma identidade visual própria, elegante, acolhedora e coerente com a tradição da Igreja Católica.
+
+Não faça uma simples landing page. Desenvolva um portal institucional completo, com múltiplas páginas e categorias de conteúdo.
+
+## 2. Identidade visual e design
+
+Adote uma identidade visual inspirada em sites institucionais católicos contemporâneos.
+
+Características desejadas:
+
+- Design clássico, elegante e institucional.
+- Aparência limpa e organizada.
+- Tipografia sofisticada e de excelente legibilidade.
+- Paleta de cores sóbria, com tons de azul-marinho, branco, bege e dourado.
+- Imagens religiosas e fotografias da comunidade paroquial.
+- Espaçamento equilibrado entre seções.
+- Elementos visuais discretos, sem excesso de animações.
+- Layout responsivo para computadores, tablets e smartphones.
+
+O resultado deve transmitir espiritualidade, acolhimento, tradição e credibilidade.
+
+## 3. Estrutura do site
+
+### Cabeçalho (Header)
+
+Desenvolva um cabeçalho institucional contendo:
+
+- Logotipo da paróquia.
+- Menu principal de navegação.
+- Submenus para categorias com várias páginas.
+- Ícones de redes sociais.
+- Informações de contato.
+- Campo de pesquisa.
+
+O menu deve possuir comportamento responsivo, com navegação adaptada para dispositivos móveis.
+
+### Página inicial (Home)
+
+Organize a página inicial nas seguintes seções:
+
+**A. Destaque institucional**
+
+Apresente uma imagem de destaque relacionada à paróquia, acompanhada de uma mensagem institucional e elementos de identificação.
+
+**B. Notícias**
+
+Crie uma seção de notícias com:
+
+- Imagem de capa.
+- Título da publicação.
+- Pequena descrição.
+- Data de publicação.
+- Botão "Leia mais".
+- Opção para visualizar todas as notícias.
+
+Utilize cards organizados em grade, com aparência editorial.
+
+**C. Nossa Paróquia**
+
+Desenvolva uma seção institucional com cards ou blocos informativos:
+
+- História da paróquia.
+- Padroeira.
+- Padres.
+- Espaço litúrgico.
+- Casa de retiros.
+- Informações sobre a comunidade.
+
+**D. Horários**
+
+Crie uma área de fácil visualização contendo:
+
+- Horários das missas.
+- Horários de confissões.
+- Programação litúrgica.
+- Informações sobre celebrações especiais.
+
+**E. Pastorais e movimentos**
+
+Apresente as pastorais e os movimentos da paróquia em uma organização visual intuitiva.
+
+**F. Rodapé (Footer)**
+
+Inclua:
+
+- Endereço da paróquia.
+- Telefone e WhatsApp.
+- E-mail institucional.
+- Redes sociais.
+- Links rápidos.
+- Direitos autorais.
+
+## 4. Organização das páginas
+
+Implemente uma estrutura de navegação semelhante à seguinte:
+
+- Início
+- A Paróquia
+  - História
+  - Padroeira
+  - Padres
+- Pastorais e Movimentos
+  - Batismo
+  - Catequese
+  - Crisma
+  - Liturgia
+  - Música
+  - Jovens
+  - Comunicação
+  - Dízimo
+  - Coroinhas e Acólitos
+  - Outras pastorais
+- Sacramentos
+- Notícias
+- Horários
+- Contato
+
+Cada categoria deverá possuir sua própria página ou rota, conforme sua finalidade.
+
+## 5. Páginas de conteúdo
+
+Desenvolva um modelo de página interna para notícias e artigos contendo:
+
+- Título.
+- Imagem principal.
+- Data de publicação.
+- Autor ou responsável.
+- Conteúdo textual.
+- Imagens complementares.
+- Links para conteúdos relacionados.
+- Botões de compartilhamento.
+
+As páginas devem manter a identidade visual da página inicial.
+
+## 6. Funcionalidades
+
+Implemente:
+
+- Navegação entre páginas.
+- Menu dropdown.
+- Menu mobile.
+- Pesquisa de conteúdo.
+- Cards de notícias clicáveis.
+- Página individual para cada publicação.
+- Links para WhatsApp e redes sociais.
+- Navegação por categorias.
+- Breadcrumbs nas páginas internas.
+- Botões de chamada para ação.
+
+Não crie botões meramente decorativos. Todos os elementos interativos devem funcionar.
+
+## 7. Requisitos técnicos
+
+Utilize uma arquitetura organizada e escalável.
+
+Preferencialmente:
+
+- Angular com TypeScript.
+- HTML semântico.
+- CSS organizado e reutilizável.
+- Componentes independentes.
+- Angular Router para navegação.
+- Componentização de elementos repetitivos.
+- Separação entre dados, componentes e apresentação.
+
+Organize o projeto em componentes como:
+
+- HeaderComponent
+- FooterComponent
+- NavigationComponent
+- HomeComponent
+- NewsComponent
+- NewsDetailComponent
+- ParishComponent
+- PastoralComponent
+- SacramentsComponent
+- ContactComponent
+
+Utilize dados estruturados para facilitar a inclusão e a atualização de notícias, artigos e informações institucionais.
+
+Caso não exista um backend, utilize dados simulados organizados em serviços, deixando a arquitetura preparada para uma futura integração com API ou CMS.
+
+## 8. Responsividade e acessibilidade
+
+O site deve funcionar corretamente em:
+
+- Desktops.
+- Notebooks.
+- Tablets.
+- Smartphones.
+
+Respeite boas práticas de acessibilidade, contraste, navegação por teclado, textos alternativos em imagens e estrutura semântica.
+
+Também implemente boas práticas básicas de SEO, incluindo títulos, descrições e URLs amigáveis.
+
+## 9. Orientações de desenvolvimento
+
+Antes de iniciar a implementação:
+
+1. Analise a referência visual e sua estrutura de navegação.
+2. Defina a arquitetura do projeto.
+3. Organize os componentes reutilizáveis.
+4. Defina a identidade visual.
+5. Desenvolva primeiro o cabeçalho e a página inicial.
+6. Implemente as páginas internas.
+7. Desenvolva a responsividade.
+8. Teste todas as rotas e funcionalidades.
+
+Não tente reproduzir apenas uma imagem estática do site de referência. Desenvolva uma aplicação web funcional, com páginas navegáveis e componentes reutilizáveis.
+
+## 10. Resultado esperado
+
+Entregue um portal paroquial completo, visualmente profissional, responsivo, organizado e de fácil manutenção.
+
+O resultado deve preservar as características de um portal institucional católico, tendo como referência a organização e a experiência de navegação do site PNSE, mas com identidade visual própria e código independente.

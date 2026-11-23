@@ -1,0 +1,283 @@
+/* ==========================================================================
+   RESPONSIVE — Media Queries for Mobile, Tablet and Desktop
+   Paróquia Imaculada Conceição
+   ========================================================================== */
+
+/* ── Tablets & Medium Desktops (max-width: 1024px) ─────────────────────── */
+@media screen and (max-width: 1024px) {
+  :root {
+    --space-3xl: 3rem;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .parish-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .schedules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .pastorals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .hero__title {
+    font-size: 2.75rem;
+  }
+}
+
+/* ── Mobile Devices & Small Tablets (max-width: 768px) ─────────────────── */
+@media screen and (max-width: 768px) {
+  :root {
+    --space-2xl: 2rem;
+    --space-3xl: 2.5rem;
+    --header-height: 70px;
+  }
+
+  /* Top Bar */
+  .site-header__topbar {
+    display: none; /* Hide topbar on mobile for cleaner view */
+  }
+
+  /* Header & Navigation */
+  .site-header__logo-img {
+    height: 42px;
+  }
+
+  .site-header__logo-name {
+    font-size: 1.15rem;
+  }
+
+  .site-header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 82%;
+    max-width: 340px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: var(--z-modal);
+    transition: right var(--transition-normal);
+    overflow-y: auto;
+    padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+    display: block;
+  }
+
+  .site-header__nav.active {
+    right: 0;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-menu__item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-menu__link {
+    padding: var(--space-md) 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu__dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding-left: var(--space-md);
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-sm);
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-menu__item.active .nav-menu__dropdown,
+  .nav-menu__item:hover .nav-menu__dropdown {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: var(--z-header);
+  }
+
+  .mobile-menu-toggle span {
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 60vh;
+    padding: var(--space-2xl) var(--space-sm);
+    background-attachment: scroll; /* iOS fix */
+  }
+
+  .hero__title {
+    font-size: 2.15rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-sm);
+  }
+
+  .hero__cta-primary,
+  .hero__cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+
+  /* Grids to single column */
+  .news-grid,
+  .parish-grid,
+  .schedules-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .pastorals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .cta-box__button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .back-to-top {
+    bottom: 80px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ── Small Mobile (max-width: 480px) ────────────────────────────────────── */
+@media screen and (max-width: 480px) {
+  .hero__title {
+    font-size: 1.85rem;
+  }
+
+  .pastorals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header__logo-parish {
+    font-size: 0.7rem;
+  }
+
+  .site-header__logo-name {
+    font-size: 1.05rem;
+  }
+
+  .search-overlay__inner {
+    padding: 0 var(--space-sm);
+  }
+
+  .search-overlay__input {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,190 @@
+/* ==========================================================================
+   HERO — Hero Banner Section
+   Paróquia Imaculada Conceição
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #FFFFFF;
+  padding: var(--space-3xl) var(--space-md);
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 27, 51, 0.72) 0%,
+    rgba(27, 42, 74, 0.85) 60%,
+    rgba(27, 42, 74, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  animation: heroFadeIn 1s ease-out;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 18px;
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid var(--color-accent);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 3.25rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero__title span {
+  color: var(--color-accent-light);
+  display: block;
+  font-weight: 400;
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 680px;
+  margin: 0 auto var(--space-xl);
+  font-weight: 300;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.hero__cta-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__cta-primary:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.5);
+  color: var(--color-primary-dark);
+}
+
+.hero__cta-secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Scroll indicator */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+  animation: bounce 2s infinite;
+}
+
+.hero__scroll-indicator:hover {
+  color: var(--color-accent);
+}
+
+.hero__scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
