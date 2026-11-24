@@ -16,13 +16,15 @@
 }
 
 .section-tag {
-  display: inline-block;
-  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  font-size: 0.85rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-accent-dark);
   font-weight: 600;
   margin-bottom: var(--space-xs);
+  text-align: center;
 }
 
 .section-title {
@@ -169,8 +171,9 @@
 
 .parish-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-xl);
+  justify-content: center;
 }
 
 .parish-card {

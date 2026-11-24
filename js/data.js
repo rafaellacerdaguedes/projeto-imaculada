@@ -80,8 +80,8 @@ window.SiteData = {
       id: 4,
       slug: "retiro-espiritual-de-advento-vigiai-e-orai",
       title: "Retiro Paroquial de Advento: Preparando o Coração para o Senhor",
-      excerpt: "Um dia inteiro de recolhimento, adoração e confissões na Casa de Retiros para vivenciarmos com profundidade o tempo litúrgico do Advento.",
-      content: "<p>O tempo do Advento nos convida à conversão e à santa expectativa do nascimento do Menino Jesus. Em preparação espiritual, realizaremos nosso Retiro Anual de Advento.</p><p>Teremos palestras conduzidas pelo Padre Antônio Carlos, momentos de deserto espiritual, atendimento de confissões durante todo o dia e Santa Missa de encerramento.</p><p>As inscrições incluem almoço comunitário e lanche da tarde na Casa de Retiros São José. Garanta sua participação na secretaria.</p>",
+      excerpt: "Um dia inteiro de recolhimento, adoração e confissões para vivenciarmos com profundidade o tempo litúrgico do Advento.",
+      content: "<p>O tempo do Advento nos convida à conversão e à santa expectativa do nascimento do Menino Jesus. Em preparação espiritual, realizaremos nosso Retiro Anual de Advento.</p><p>Teremos palestras conduzidas pelo Padre Antônio Carlos, momentos de deserto espiritual, atendimento de confissões durante todo o dia e Santa Missa de encerramento.</p><p>As inscrições incluem almoço comunitário e lanche da tarde no salão paroquial. Garanta sua participação na secretaria.</p>",
       date: "2026-10-28",
       author: "Equipe Litúrgica",
       category: "Eventos",
@@ -162,12 +162,6 @@ window.SiteData = {
       icon: "🏛️",
       title: "Espaço Litúrgico",
       text: "Nossa Matriz combina arte sacra clássica, nave acolhedora com capacidade para 600 fiéis, capela do Santíssimo e jardins para reflexão orante.",
-      link: "#nossa-paroquia"
-    },
-    {
-      icon: "🏡",
-      title: "Casa de Retiros",
-      text: "Localizada em meio à natureza, a Casa de Retiros São José acolhe encontros, vigílias e momentos de silêncio para grupos pastorais e movimentos diocesanos.",
       link: "#nossa-paroquia"
     },
     {

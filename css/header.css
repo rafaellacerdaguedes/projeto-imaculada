@@ -162,6 +162,11 @@
   transition: transform var(--transition-fast);
 }
 
+.nav-menu__item--has-children:hover > .nav-menu__link::after,
+.nav-menu__item--has-children.active > .nav-menu__link::after {
+  transform: rotate(180deg);
+}
+
 .nav-menu__dropdown {
   position: absolute;
   top: 100%;
