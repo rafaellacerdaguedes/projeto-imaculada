@@ -1,3 +1,8 @@
+=======================================================================
+      PROMPT USADO
+=======================================================================
+
+
 # Desenvolvimento de um Portal Institucional Paroquial
 
 Atue como um desenvolvedor Front-end Sênior e UI/UX Designer especializado na criação de portais institucionais, sites religiosos e plataformas de gerenciamento de conteúdo.
@@ -225,3 +230,32 @@ Não tente reproduzir apenas uma imagem estática do site de referência. Desenv
 Entregue um portal paroquial completo, visualmente profissional, responsivo, organizado e de fácil manutenção.
 
 O resultado deve preservar as características de um portal institucional católico, tendo como referência a organização e a experiência de navegação do site PNSE, mas com identidade visual própria e código independente.
+
+=======================================================================
+      MOD 1
+=======================================================================
+
+- arrumar seta para baixo no menu (seta duplicada)
+- subir a class="section-tag" para cima do h2
+- retirar "casa de retiros"
+
+=======================================================================
+      MOD 2
+=======================================================================
+
+- organização assimétrica dos cards (REVERTI!!!)
+
+=======================================================================
+      MOD 3
+=======================================================================
+
+- colocar links de contato
+- arrumar Horários
+- localização correta / maps
+- corrigir bug no menu mobile
+
+=======================================================================
+      MOD 4
+=======================================================================
+
+- correção horários de atendimento (Footer)
