@@ -17,7 +17,7 @@ window.SiteData = {
     phone: "(61) 3256-0301",
     whatsapp: "(61) 3256-0301",
     email: "p.imaculadaconceicao@gmail.com",
-    officeHours: "Segunda a Sexta das 08h às 12h e das 13h às 17h | Sábado das 08h às 12h",
+    officeHours: "Segunda, Terça e Sexta: 14h às 19h30 | Quarta e Quinta: 08h às 12h e 14h às 19h30 | Sábado: 08h às 12h",
     socialMedia: {
       facebook: "https://facebook.com/imaculadasobradinho/",
       instagram: "https://instagram.com/paroquiaimaculadasobradinho/",
@@ -309,6 +309,6 @@ window.SiteData = {
     { label: "Sacramentos", href: "#sacramentos" },
     { label: "Notícias", href: "#noticias" },
     { label: "Horários", href: "#horarios" },
-    { label: "Contato", href: "#contato" }
+    { label: "Contato", href: "#secretaria" }
   ]
 };
