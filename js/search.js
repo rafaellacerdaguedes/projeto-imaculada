@@ -125,11 +125,15 @@
       }
 
       // 5. Search in Schedules
-      if (q.includes('missa') || q.includes('horario') || q.includes('confissao') || q.includes('sabado') || q.includes('domingo')) {
+      if (q.includes('missa') || q.includes('horario') || q.includes('confissao') || q.includes('sabado') || q.includes('domingo') || q.includes('terco') || q.includes('adoracao')) {
+        let scheduleDesc = '';
+        if (window.SiteData?.schedules?.masses) {
+          scheduleDesc = window.SiteData.schedules.masses.map(m => `${m.day}: ${m.times.join(', ')}`).join(' | ');
+        }
         results.push({
           badge: 'Horários Litúrgicos',
           title: '🕊️ Santas Missas e Confissões',
-          description: 'Domingo: 7h, 9h, 11h e 18h | Seg-Sex: 7h e 18h30 | Sáb: 7h e 17h. Confissões às quartas e sábados.',
+          description: scheduleDesc || 'Confira a programação completa de missas e celebrações.',
           link: '#horarios'
         });
       }

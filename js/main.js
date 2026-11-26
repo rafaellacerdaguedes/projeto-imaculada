@@ -21,6 +21,8 @@
     initialized = true;
 
     // Render all dynamic sections
+    renderHero();
+    applyParishData();
     renderNews();
     renderParishInfo();
     renderSchedules();
@@ -180,6 +182,8 @@
     const toggle = document.getElementById('mobile-menu-toggle');
     const nav = document.getElementById('main-nav');
     const overlay = document.getElementById('mobile-menu-overlay');
+    const header = document.getElementById('site-header');
+    const closeBtn = document.getElementById('mobile-nav-close');
 
     if (!toggle || !nav) return;
 
@@ -187,6 +191,8 @@
       nav.classList.add('active');
       toggle.classList.add('active');
       overlay?.classList.add('active');
+      header?.classList.add('menu-open');
+      document.body.classList.add('mobile-nav-open');
       toggle.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
@@ -195,6 +201,8 @@
       nav.classList.remove('active');
       toggle.classList.remove('active');
       overlay?.classList.remove('active');
+      header?.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-open');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
@@ -204,21 +212,29 @@
       nav.classList.contains('active') ? closeMenu() : openMenu();
     });
 
+    closeBtn?.addEventListener('click', closeMenu);
     overlay?.addEventListener('click', closeMenu);
+
+    // Tecla Escape para fechar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        closeMenu();
+      }
+    });
 
     // Dropdown toggle on mobile
     const dropdownItems = nav.querySelectorAll('.nav-menu__item--has-children');
     dropdownItems.forEach(item => {
       const link = item.querySelector('.nav-menu__link');
       link?.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 992 || window.matchMedia('(max-width: 992px)').matches) {
           e.preventDefault();
           item.classList.toggle('active');
         }
       });
     });
 
-    // Close when clicking simple links
+    // Close when clicking simple links or dropdown items
     const simpleLinks = nav.querySelectorAll('.nav-menu__link:not(.nav-menu__item--has-children > .nav-menu__link), .nav-menu__dropdown-link');
     simpleLinks.forEach(link => link.addEventListener('click', closeMenu));
   }
@@ -333,6 +349,115 @@
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
+  }
+
+  /* ── 9.5 HERO & PARISH DYNAMIC BINDINGS ──────────────────────────────── */
+  function renderHero() {
+    const hero = window.SiteData?.hero;
+    if (!hero) return;
+
+    const heroSection = document.getElementById('inicio');
+    if (heroSection && hero.backgroundImage) {
+      heroSection.style.backgroundImage = `url('${hero.backgroundImage}')`;
+    }
+
+    const badge = document.querySelector('.hero__badge');
+    if (badge) {
+      if (hero.badge) {
+        badge.innerHTML = `<span>✨</span> ${hero.badge}`;
+        badge.style.display = '';
+      } else {
+        badge.remove();
+      }
+    }
+
+    const title = document.querySelector('.hero__title');
+    if (title && hero.title) {
+      title.innerHTML = `${hero.title} ${hero.titleHighlight ? `<span>${hero.titleHighlight}</span>` : ''}`;
+    }
+
+    const subtitle = document.querySelector('.hero__subtitle');
+    if (subtitle && hero.subtitle) {
+      subtitle.textContent = hero.subtitle;
+    }
+
+    const ctaPrimary = document.querySelector('.hero__cta-primary');
+    if (ctaPrimary && hero.ctaPrimaryText) {
+      ctaPrimary.href = hero.ctaPrimaryLink || '#nossa-paroquia';
+      ctaPrimary.innerHTML = `<span>${hero.ctaPrimaryText}</span> <span>→</span>`;
+    }
+
+    const ctaSecondary = document.querySelector('.hero__cta-secondary');
+    if (ctaSecondary && hero.ctaSecondaryText) {
+      ctaSecondary.href = hero.ctaSecondaryLink || '#horarios';
+      ctaSecondary.innerHTML = `<span>${hero.ctaSecondaryText}</span>`;
+    }
+  }
+
+  function applyParishData() {
+    const parish = window.SiteData?.parish;
+    if (!parish) return;
+
+    const rawPhone = parish.phone.replace(/\D/g, '');
+    const rawWhatsapp = parish.whatsapp.replace(/\D/g, '');
+
+    // Topbar & Footer contact links
+    document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+      el.href = `tel:+55${rawPhone}`;
+      if (el.querySelector('svg')) return; // Mantém ícone sem alterar conteúdo
+      const span = el.querySelector('span');
+      if (span) {
+        el.innerHTML = `${span.outerHTML} ${parish.phone}`;
+      } else {
+        el.textContent = parish.phone;
+      }
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
+      el.href = `mailto:${parish.email}`;
+      // Se for botão apenas com ícone (SVG), mantém o ícone intacto
+      if (el.querySelector('svg') || el.closest('.topbar__social') || el.closest('.footer-col__social')) {
+        return;
+      }
+      const span = el.querySelector('span');
+      if (span) {
+        el.innerHTML = `${span.outerHTML} ${parish.email}`;
+      } else {
+        el.textContent = parish.email;
+      }
+    });
+
+    // Social links
+    if (parish.socialMedia) {
+      document.querySelectorAll('a[aria-label="Facebook"]').forEach(el => {
+        el.href = parish.socialMedia.facebook;
+      });
+      document.querySelectorAll('a[aria-label="Instagram"]').forEach(el => {
+        el.href = parish.socialMedia.instagram;
+      });
+      document.querySelectorAll('a[aria-label="YouTube"]').forEach(el => {
+        el.href = parish.socialMedia.youtube;
+      });
+    }
+
+    // WhatsApp Floating Button & CTA buttons
+    const waText = encodeURIComponent(`Olá, gostaria de informações sobre a ${parish.name}`);
+    document.querySelectorAll('.whatsapp-float').forEach(el => {
+      el.href = `https://wa.me/55${rawWhatsapp}?text=${waText}`;
+    });
+
+    // Dízimo CTA WhatsApp
+    const dizimoBtn = document.querySelector('.cta-box__button');
+    if (dizimoBtn) {
+      const dizimoText = encodeURIComponent('Olá, gostaria de informações sobre como ser um dizimista');
+      dizimoBtn.href = `https://wa.me/55${rawWhatsapp}?text=${dizimoText}`;
+    }
+
+    // Google Maps iframe
+    const mapIframe = document.querySelector('#secretaria iframe');
+    if (mapIframe && parish.mapEmbedUrl) {
+      mapIframe.src = parish.mapEmbedUrl;
+    }
   }
 
   /* ── 10. DATE FORMATTER ────────────────────────────────────────────────── */

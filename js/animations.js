@@ -72,10 +72,13 @@
     const nav = document.getElementById('main-nav');
     const toggle = document.getElementById('mobile-menu-toggle');
     const overlay = document.getElementById('mobile-menu-overlay');
+    const header = document.getElementById('site-header');
     if (nav?.classList.contains('active')) {
       nav.classList.remove('active');
       toggle?.classList.remove('active');
       overlay?.classList.remove('active');
+      header?.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-open');
       document.body.style.overflow = '';
     }
   });

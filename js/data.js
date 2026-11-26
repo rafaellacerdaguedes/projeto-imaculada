@@ -9,25 +9,25 @@ window.SiteData = {
   parish: {
     name: "Paróquia Nossa Senhora Imaculada Conceição",
     shortName: "Imaculada Conceição",
-    diocese: "Arquidiocese de São Paulo",
-    foundingYear: 1952,
-    pastor: "Padre Antônio Carlos Ribeiro",
-    vicar: "Padre Marcos Silveira",
-    address: "Rua das Acácias, 150 - Centro, São Paulo - SP, CEP 01000-000",
-    phone: "(11) 3333-4444",
-    whatsapp: "(11) 99999-8888",
-    email: "contato@imaculadaconceicao.org.br",
+    diocese: "Arquidiocese de Brasília",
+    foundingYear: 1971,
+    pastor: " Padre Veranildo Ferreira da Silva",
+    vicar: "Padre Guillermo Santos Frías",
+    address: "AE 01 Q. 13 Cj. A, Área Reservada 1-2, Sobradinho, 73.040-130",
+    phone: "(61) 3256-0301",
+    whatsapp: "(61) 3256-0301",
+    email: "p.imaculadaconceicao@gmail.com",
     officeHours: "Segunda a Sexta das 08h às 12h e das 13h às 17h | Sábado das 08h às 12h",
     socialMedia: {
-      facebook: "https://facebook.com/paroquiaimaculada",
-      instagram: "https://instagram.com/paroquiaimaculada",
-      youtube: "https://youtube.com/@paroquiaimaculada"
+      facebook: "https://facebook.com/imaculadasobradinho/",
+      instagram: "https://instagram.com/paroquiaimaculadasobradinho/",
+      youtube: "https://youtube.com/paroquiaimaculadaconceicaosobradinhodf"
     },
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.634!3d-23.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzUyLjgiUyA0NsKwMzgnMDIuNCJX!5e0!3m2!1spt-BR!2sbr"
+    mapEmbedUrl: "https://maps.google.com/maps?q=Par%C3%B3quia+Nossa+Senhora+da+Imaculada+Concei%C3%A7%C3%A3o+-+Sobradinho,+Bras%C3%ADlia+-+DF&t=&z=16&ie=UTF8&iwloc=&output=embed"
   },
 
   hero: {
-    badge: "Diocese de São Paulo • Desde 1952",
+    badge: null,
     title: "Paróquia Nossa Senhora",
     titleHighlight: "Imaculada Conceição",
     subtitle: "Acolhemos você e sua família de braços abertos para celebrar os sacramentos, crescer na fé e viver o amor fraterno em comunidade.",
@@ -81,7 +81,7 @@ window.SiteData = {
       slug: "retiro-espiritual-de-advento-vigiai-e-orai",
       title: "Retiro Paroquial de Advento: Preparando o Coração para o Senhor",
       excerpt: "Um dia inteiro de recolhimento, adoração e confissões para vivenciarmos com profundidade o tempo litúrgico do Advento.",
-      content: "<p>O tempo do Advento nos convida à conversão e à santa expectativa do nascimento do Menino Jesus. Em preparação espiritual, realizaremos nosso Retiro Anual de Advento.</p><p>Teremos palestras conduzidas pelo Padre Antônio Carlos, momentos de deserto espiritual, atendimento de confissões durante todo o dia e Santa Missa de encerramento.</p><p>As inscrições incluem almoço comunitário e lanche da tarde no salão paroquial. Garanta sua participação na secretaria.</p>",
+      content: "<p>O tempo do Advento nos convida à conversão e à santa expectativa do nascimento do Menino Jesus. Em preparação espiritual, realizaremos nosso Retiro Anual de Advento.</p><p>Teremos palestras conduzidas pelo Padre Veranildo Ferreira, momentos de deserto espiritual, atendimento de confissões durante todo o dia e Santa Missa de encerramento.</p><p>As inscrições incluem almoço comunitário e lanche da tarde no salão paroquial. Garanta sua participação na secretaria.</p>",
       date: "2026-10-28",
       author: "Equipe Litúrgica",
       category: "Eventos",
@@ -143,7 +143,7 @@ window.SiteData = {
     {
       icon: "⛪",
       title: "Nossa História",
-      text: "Fundada em 1952, a Paróquia Imaculada Conceição nasceu da união de pioneiros devotos que construíram um marco de fé e caridade no coração da comunidade.",
+      text: "Fundada em 1971, a Paróquia Imaculada Conceição nasceu da união de pioneiros devotos que construíram um marco de fé e caridade no coração da comunidade.",
       link: "#nossa-paroquia"
     },
     {
@@ -155,7 +155,7 @@ window.SiteData = {
     {
       icon: "✝️",
       title: "Nossos Padres",
-      text: "Conheça o pároco Pe. Antônio Carlos e o vigário Pe. Marcos, que dedicam suas vidas ao pastoreio, ministração dos sacramentos e aconselhamento do povo de Deus.",
+      text: "Conheça o pároco Pe. Veranildo Ferreira e o vigário Pe. Guillermo, que dedicam suas vidas ao pastoreio, ministração dos sacramentos e aconselhamento do povo de Deus.",
       link: "#nossa-paroquia"
     },
     {
@@ -175,20 +175,17 @@ window.SiteData = {
   // ── Horários das Missas e Celebrações ──
   schedules: {
     masses: [
-      { day: "Domingo", times: ["07h00", "09h00 (Comunidade)", "11h00 (Crianças)", "18h00 (Jovens)"] },
-      { day: "Segunda a Sexta", times: ["07h00 (Matutina)", "18h30 (Vespertina)"] },
-      { day: "Sábado", times: ["07h00 (Nossa Senhora)", "17h00 (Missa Antecipada de Domingo)"] }
+      { day: "Domingo", times: ["08h00", "10h30 (Crianças)", "18h00 (Comunidade)", "19h30 (Jovens)"] },
+      { day: "Segunda a Sexta", times: ["18h30"] },
     ],
     confessions: [
-      { day: "Quarta-feira", times: ["16h00 às 17h30"] },
-      { day: "Sábado", times: ["15h00 às 16h30"] },
-      { day: "Demais dias", times: ["Mediante agendamento na secretaria"] }
+      { day: "Terça e Sexta", times: ["17h30 às 18h30"] },
+      { day: "Sábado", times: ["09h30 às 10h30"] },
     ],
     specialCelebrations: [
-      { name: "Adoração ao Santíssimo", schedule: "Toda quinta-feira, das 15h00 às 17h30" },
-      { name: "Terço dos Homens", schedule: "Terças-feiras, às 19h30" },
-      { name: "Missa com Novena da Padroeira", schedule: "Toda quarta-feira, às 18h30" },
-      { name: "Missa do Sagrado Coração de Jesus", schedule: "Primeira sexta-feira do mês, às 18h30" }
+      { name: "Adoração ao Santíssimo", schedule: "Toda quinta-feira, das 14h00 às 18h40" },
+      { name: "Terço dos Homens", schedule: "Quartas-feiras, às 20h00" },
+      { name: "Terço dos Jovens", schedule: "Toda quinta-feira, após a missa" }
     ]
   },
 

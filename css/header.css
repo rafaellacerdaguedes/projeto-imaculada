@@ -176,6 +176,7 @@
   box-shadow: var(--shadow-lg);
   border-radius: var(--radius-md);
   padding: var(--space-sm) 0;
+  padding-left: 10px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -219,6 +220,12 @@
 
 .site-header__search:hover {
   color: var(--color-accent);
+}
+
+/* ── Mobile Nav Elements (Hidden by default on Desktop) ─────────────────── */
+.mobile-nav__header,
+.mobile-nav__footer {
+  display: none;
 }
 
 /* ── Mobile Menu Toggle ─────────────────────────────────────────────────── */
